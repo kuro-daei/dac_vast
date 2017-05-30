@@ -1,0 +1,41 @@
+<h1>キャンペーン編集</h1>
+
+<%= form_for @campaign do |f| %>
+
+<ul>
+    <p>
+        <%= f.label :name, "キャンペーン名" %>：<%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :start_at, "開始日時" %>：<%= f.text_field :start_at %>
+    </p>
+    <p>
+        <%= f.label :end_at, "終了日時" %>：<%= f.text_field :end_at %>
+    </p>
+    <p>
+        <%= f.label :limit_start, "ゴールimp" %>：<%= f.number_field :limit_start %>
+    </p>
+    <p>
+        <%= f.label :movie_url, "動画URL" %>：<%= f.text_field :movie_url %>
+    </p>
+    <p>
+        <p>配信先キューポイント</p>
+    </p>
+    <hr>
+    <% @cuepoints.each do |cuepoint| %>
+    <p>
+        <% checked = cuepoint.campaigns.exists?(@campaign.id) ? true : false %>
+        <%= f.check_box 'cuepoint_ids', {:name => 'campaign[cuepoint_ids][]', multiple:true, :checked => checked}, cuepoint.id, "" %>
+        <%= cuepoint.name %>
+    </p>
+    <% end %>
+
+</ul>
+
+<p>
+    <%= f.submit "登録" %>
+    <%= link_to "[中止]", campaigns_path %>
+    <%= link_to "[削除]", campaign_path(@campaign.id), method: :delete, data: { confirm: "削除しますか？一旦削除すると元には戻せません。" } %>
+</p>
+
+<% end %>

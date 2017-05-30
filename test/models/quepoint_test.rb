@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CampaignsControllerTest < ActionDispatch::IntegrationTest
+class QuepointTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,2 @@
+module QuepointsHelper
+end
