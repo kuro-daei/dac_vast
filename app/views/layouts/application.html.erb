@@ -6,9 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      #content {
+        height: 600px;
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <p><%= link_to "[キャンペーン]", campaigns_path %><%= link_to "[キューポイント]", cuepoints_path %>[レポート]</p>
+      <hr>
+    </header>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <footer>
+      <hr>
+      <p style="text-align:center;">©DAC</p>
+    </footer>
   </body>
 </html>

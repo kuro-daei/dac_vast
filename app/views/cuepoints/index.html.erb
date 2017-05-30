@@ -1,0 +1,11 @@
+<h1>キューポイント一覧</h1>
+
+<%= link_to "[キューポイント登録]", new_cuepoint_path %>
+
+<ul>
+  <% @cuepoints.each do |cuepoint| %>
+    <li>
+      <%= link_to cuepoint.name, edit_cuepoint_path(cuepoint.id) %>
+    </li>
+  <% end %>
+</ul>

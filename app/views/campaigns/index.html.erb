@@ -1,0 +1,11 @@
+<h1>キャンペーン一覧</h1>
+
+<%= link_to "[キャンペーン登録]", new_campaign_path %>
+
+<ul>
+  <% @campaigns.each do |campaign| %>
+    <li>
+      <%= link_to campaign.name, edit_campaign_path(campaign.id) %>
+    </li>
+  <% end %>
+</ul>

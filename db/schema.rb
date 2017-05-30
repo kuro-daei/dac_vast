@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529053308) do
+ActiveRecord::Schema.define(version: 20170530052651) do
 
-  create_table "Campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "Campaigns_Cuepoints", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cuepoint_id", null: false
+    t.integer  "campaign_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
+    t.index ["campaign_id"], name: "index_campaigns_cuepoints_on_campaign_id", using: :btree
+    t.index ["cuepoint_id"], name: "index_campaigns_cuepoints_on_quepoint_id", using: :btree
+  end
+
+  create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",        null: false
     t.datetime "start_at",    null: false
     t.datetime "end_at",      null: false
@@ -20,6 +30,16 @@ ActiveRecord::Schema.define(version: 20170529053308) do
     t.string   "movie_url",   null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
   end
 
+  create_table "cuepoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+  end
+
+  add_foreign_key "Campaigns_Cuepoints", "campaigns"
+  add_foreign_key "Campaigns_Cuepoints", "cuepoints"
 end

@@ -1,0 +1,17 @@
+<h1>キューポイント編集</h1>
+
+<%= form_for @cuepoint do |f| %>
+
+<ul>
+    <p>
+        <%= f.label :name, "キューポイント名" %>：<%= f.text_field :name %>
+    </p>
+</ul>
+
+<p>
+    <%= f.submit "登録" %>
+    <%= link_to "[中止]", cuepoints_path %>
+    <%= link_to "[削除]", cuepoint_path(@cuepoint.id), method: :delete, data: { confirm: "削除しますか？一旦削除すると元には戻せません。" } %>
+</p>
+
+<% end %>

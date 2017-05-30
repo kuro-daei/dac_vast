@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
 
   before_action :set_campaign, only: [:edit, :update, :destroy]
+  before_action :select_cuepoints, only: [:new, :edit]
 
   def index
     @campaigns = Campaign.all
@@ -13,7 +14,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
-      redirect_to campaigns_path
+        redirect_to campaigns_path
     else
       render 'new'
     end
@@ -24,9 +25,9 @@ class CampaignsController < ApplicationController
 
   def update
     if @campaign.update(campaign_params)
-      redirect_to campaigns_path
+        redirect_to campaigns_path
     else
-      render 'edit'
+      render 'new'
     end
   end
 
@@ -38,11 +39,15 @@ class CampaignsController < ApplicationController
   private
 
     def campaign_params
-      params[:campaign].permit(:name,:advertiser_id,:sdate,:fdate,:goal)
+      params[:campaign].permit(:name,:start_at,:end_at,:limit_start,:movie_url,{:cuepoint_ids => []})
     end
 
     def set_campaign
       @campaign = Campaign.find(params[:id])
+    end
+
+    def select_cuepoints
+      @cuepoints = Cuepoint.all 
     end
 
 end
