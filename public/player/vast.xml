@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="2.0">
+  <Ad>
+    <InLine>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:01:30</Duration>
+            <MediaFiles>
+              <MediaFile delivery="progressive" bitrate="5226" width="640" height="360" type="video/mp4"><![CDATA[http://techslides.com/demos/sample-videos/small.mp4]]></MediaFile>
+            </MediaFiles>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[./track.gif?start]]></Tracking>
+              <Tracking event="complete"><![CDATA[./track.gif?complete]]></Tracking>
+            </TrackingEvents>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
