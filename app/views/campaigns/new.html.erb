@@ -11,7 +11,7 @@
     </p>
     <p>
         <%= f.label :end_at, "終了日時" %>：<%= f.text_field :end_at %>
-    </p>    
+    </p>
     <p>
         <%= f.label :limit_start, "ゴールimp" %>：<%= f.number_field :limit_start %>
     </p>
@@ -24,7 +24,7 @@
     <hr>
     <% @cuepoints.each do |cuepoint| %>
     <p>
-        <% checked = cuepoint.campaigns.exists?(@campaign.id) ? true : false %>
+        <% checked = @campaign.cuepoints.exists?(cuepoint)  ? true : false %>
         <%= f.check_box 'cuepoint_ids', {:name => 'campaign[cuepoint_ids][]', multiple:true, :checked => checked}, cuepoint.id, "" %>
         <%= cuepoint.name %>
     </p>

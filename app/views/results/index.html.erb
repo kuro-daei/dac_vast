@@ -1,0 +1,7 @@
+<h1>Results#index</h1>
+
+<ul>
+  <% @results.each do |result| %>
+    <li><%= result.campaign.name %> , <%= result.cuepoint.name %> </li>
+  <% end %>
+</ul>

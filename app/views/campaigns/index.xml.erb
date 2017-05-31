@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="2.0">
+  <Ad>
+    <InLine>
+      <Creatives>
+        <% @campaigns.each do |campaign| %>
+        <Creative>
+          <Linear>
+            <MediaFiles>
+              <MediaFile delivery="progressive" >
+                <![CDATA[ <%= campaign.movie_url %>]]>
+              </MediaFile>
+            </MediaFiles>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ <%= raw(track_url(campaign, @cuepoint, 'start')) %>]]></Tracking>
+              <Tracking event="complete"><![CDATA[ <%= raw(track_url(campaign, @cuepoint, 'complete')) %>]]></Tracking>
+            </TrackingEvents>
+          </Linear>
+        </Creative>
+        <% end %>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: MyString
+  campaign: one
+  cuepoint: one
+  deleted_at: MyString
+
+two:
+  event: MyString
+  campaign: two
+  cuepoint: two
+  deleted_at: MyString

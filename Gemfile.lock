@@ -93,6 +93,8 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     parallel (1.11.2)
+    paranoia (2.3.1)
+      activerecord (>= 4.0, < 5.2)
     parser (2.4.0.0)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -192,6 +194,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
+  paranoia (~> 2.2)
   puma (~> 3.0)
   rails (~> 5.0.2)
   rubocop
