@@ -40,7 +40,7 @@ https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0/
 #### どういう仕組みか
 VAST広告の配信では、以下のような準備が必要である。  
 サイト：動画プレイヤーのタグ  
-     VAST URL(動画プレイヤーの処理中にこのURLを使う）  
+　　　　VAST URL(動画プレイヤーの処理中にこのURLを使う）  
 アドサーバー：広告設定(動画URLを設定)  
 <img src="http://webdemo.dac.co.jp/omi/vast/vast_3.png"></img>
 
