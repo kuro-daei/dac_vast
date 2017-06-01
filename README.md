@@ -34,21 +34,21 @@
 アドサーバとしてはどのプレイヤーとも連携する事ができる。  
 ※詳しい説明はこちら：  
 「VASTって何？」http://yebisupress.dac.co.jp/2015/03/13/%E3%80%90%E5%8B%95%E7%94%BB%E5%BA%83%E5%91%8A%E3%80%91vast%E3%81%A3%E3%81%A6%E4%BD%95%EF%BC%9F/  
-※もっと詳しく知りたい：「実際のIABのVAST仕様」https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0/
+※もっと詳しく知りたい：「実際のIABのVAST仕様」https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0/  
 
 #### どういう仕組みか
 VAST広告の配信では、以下のような準備が必要である。  
-サイト：動画プレイヤーのタグ
-     VAST URL(動画プレイヤーの処理中にこのURLを使う）
+サイト：動画プレイヤーのタグ  
+     VAST URL(動画プレイヤーの処理中にこのURLを使う）  
 アドサーバー：広告設定(動画URLを設定)  
 <img src="http://webdemo.dac.co.jp/omi/vast/vast_3.png"></img>
 
 上のような準備ができていれば、実際にユーザーがサイトにアクセスしてきた際に、以下のようなフローで処理され、VAST広告が配信できる。  
 <img src="http://webdemo.dac.co.jp/omi/vast/vast_4.png"></img>
 
-動画広告は通常の画像やテキスト広告とは指標が異なる。
-動画以外：imp,click,CTR
-動画：imp,click,CTR、start,1/4,2/4,3/4,complete,mute,unmute,pose,rewind,fullscreen,etc...
+動画広告は通常の画像やテキスト広告とは指標が異なる。  
+動画以外：imp,click,CTR  
+動画：imp,click,CTR、start,1/4,2/4,3/4,complete,mute,unmute,pose,rewind,fullscreen,etc...  
 
 ## DATABSE_URL
 `config/database.yml`はコミットの対象外です。
