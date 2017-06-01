@@ -452,13 +452,17 @@ module.exports = Vast;
 "use strict";
 
 
-/*  global global_vars */
+/*  global vastUrl */
 var Vast = __webpack_require__(0);
 
 document.addEventListener('DOMContentLoaded', function () {
-  var player = document.querySelector(global_vars.video_selector);
-  var vast = new Vast(player);
-  vast.load(global_vars.vast_url).then(function () {
+  var player = document.createElement('video');
+  player.width = 775;
+  player.height = 436;
+  player.controls = true;
+  document.body.appendChild(player);
+  var vast = new Vast(document.body);
+  vast.load(vastUrl).then(function () {
     player.addEventListener('loadeddata', function () {
       player.play();
     });

@@ -1,10 +1,14 @@
-/*  global global_vars */
+/*  global vastUrl */
 const Vast = require('vastjs');
 
 document.addEventListener('DOMContentLoaded', () => {
-  const player = document.querySelector(global_vars.video_selector);
-  const vast = new Vast(player);
-  vast.load(global_vars.vast_url).then(() => {
+  const player = document.createElement('video');
+  player.width = 775;
+  player.height = 436;
+  player.controls = true;
+  document.body.appendChild(player);
+  const vast = new Vast(document.body);
+  vast.load(vastUrl).then(() => {
     player.addEventListener('loadeddata', () => {
       player.play();
     });
