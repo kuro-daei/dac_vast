@@ -8,9 +8,10 @@ class CampaignsController < ApplicationController
       # 下記はVAST URL呼び出しを想定
       @cuepoint = Cuepoint.find(params[:cuepoint_id])
       @campaigns = @cuepoint.campaigns.all.limit(1)
-      response.headers['Access-Control-Allow-Origin'] = '*'
+      response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
       response.headers['Access-Control-Allow-Methods'] = 'GET'
       headers['Access-Control-Request-Method'] = '*'
+      headers['Access-Control-Allow-Credentials'] = 'true'
       headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type'
     end
   end
