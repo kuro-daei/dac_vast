@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :campaigns, only: [:index]
   end
   get 'results', to: 'results#index'
-  get 'results/add'
+  get 'results/record'
 
 end

@@ -15,23 +15,24 @@ class CampaignsController < ApplicationController
     end
   end
 
-  # 新規作成フォーム
+  # 新規
   def new
     @campaign = Campaign.new
     @cuepoints = Cuepoint.all
   end
 
-  # 新規作成
+  # 作成
   def create
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
       redirect_to campaigns_path
     else
+      @cuepoints = Cuepoint.all
       render 'new'
     end
   end
 
-  # 編集用フォーム
+  # 編集
   def edit
     @campaign = Campaign.find(params[:id])
     @cuepoints = Cuepoint.all
@@ -50,6 +51,7 @@ class CampaignsController < ApplicationController
   # 削除
   def destroy
     @campaign = Campaign.find(params[:id])
+    @campaign.destroy
     redirect_to campaigns_path
   end
 
