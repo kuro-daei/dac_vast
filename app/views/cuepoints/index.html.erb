@@ -1,11 +1,24 @@
 <h1>キューポイント一覧</h1>
 
-<%= link_to "[キューポイント登録]", new_cuepoint_path %>
+<%= link_to "登録", new_cuepoint_path, class: 'btn btn-default' %>
 
-<ul>
-  <% @cuepoints.each do |cuepoint| %>
-    <li>
-      <%= link_to cuepoint.name, edit_cuepoint_path(cuepoint.id) %>
-    </li>
-  <% end %>
-</ul>
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>cue poiont</th>
+      <th>create</th>
+      <th>update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cuepoints.each do |cuepoint| %>
+      <tr>
+        <td><%= link_to cuepoint.id, edit_cuepoint_path(cuepoint) %></td>
+        <td><%= cuepoint.name %></td>
+        <td><%= cuepoint.created_at %></td>
+        <td><%= cuepoint.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

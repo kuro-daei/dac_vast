@@ -5,26 +5,27 @@ class CuepointsController < ApplicationController
     @cuepoints = Cuepoint.all
   end
 
-  # 新規作成フォーム
+  # 新規
   def new
     @cuepoint = Cuepoint.new
   end
 
-  # 新規作成
+  # 作成
   def create
     @cuepoint = Cuepoint.new(cuepoint_params)
-    if @cuepoint.save!
+    if @cuepoint.save
       redirect_to cuepoints_path
     else
       render 'new'
     end
   end
 
-  # 編集フォーム
+  # 編集
   def edit
     @cuepoint = Cuepoint.find(params[:id])
   end
 
+  # 更新
   def update
     @cuepoint = Cuepoint.find(params[:id])
     if @cuepoint.update(cuepoint_params)
@@ -34,6 +35,7 @@ class CuepointsController < ApplicationController
     end
   end
 
+  # 削除
   def destroy
     @cuepoint = Cuepoint.find(params[:id])
     @cuepoint.destroy
@@ -41,7 +43,8 @@ class CuepointsController < ApplicationController
   end
 
   private
-  def cuepoint_params
-    params[:cuepoint].permit(:name)
-  end
+    # キューポイント用パラメータ
+    def cuepoint_params
+      params[:cuepoint].permit(:name)
+    end
 end

@@ -1,7 +1,26 @@
-<h1>Results#index</h1>
+<h1>Results</h1>
 
-<ul>
-  <% @results.each do |result| %>
-    <li><%= result.campaign.name %> , <%= result.cuepoint.name %> </li>
-  <% end %>
-</ul>
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>cue poiont</th>
+      <th>id</th>
+      <th>campaign</th>
+      <th>start</th>
+      <th>complete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.campaign.id %></td>
+        <td><%= result.campaign.name %></td>
+        <td><%= result.cuepoint.id %></td>
+        <td><%= result.cuepoint.name %></td>
+        <td><%= result.count_start %></td>
+        <td><%= result.count_complete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
