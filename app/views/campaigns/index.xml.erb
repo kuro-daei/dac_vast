@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VAST version="2.0">
+  <% if @campaigns.length > 0 %>
   <Ad>
     <InLine>
       <Creatives>
-        <% @campaigns.each do |campaign| %>
+        <% campaign = @campaigns.sample %>
         <Creative>
           <Linear>
             <Duration>00:00:15</Duration>
@@ -18,8 +19,8 @@
             </TrackingEvents>
           </Linear>
         </Creative>
-        <% end %>
       </Creatives>
     </InLine>
   </Ad>
+  <% end %>
 </VAST>
