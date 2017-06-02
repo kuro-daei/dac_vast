@@ -12,7 +12,7 @@ class CampaignsController < ApplicationController
       now = Time.now
       @campaigns.each do |campaign|
         # 日時チェック
-        # 条件：開始日時が現在より後、または終了日時が現在より前
+        # 条件：開始日時が現在より後、または終了日時が現在より前であればnext
         if campaign.start_at > now || campaign.end_at < now
           next
         end
