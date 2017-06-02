@@ -7,14 +7,7 @@ class CampaignsController < ApplicationController
     else
       # 下記はVAST URL呼び出しを想定
       @cuepoint = Cuepoint.find(params[:cuepoint_id])
-      @campaigns = @cuepoint.campaigns.
-        where("start_at <= '#{Time.now}' AND end_at >= '#{Time.now}'").to_a
-      # result の count_start が campaign の limit_start よりも多い場合は表示しない。
-      # reuslt の レコードが無い場合も考えられる。
-      @campaigns.delete_if do |campaign|
-        result = Result.where(campaign: campaign, cuepoint: @cuepoint).first
-        !result.blank? && result.count_start > campaign.limit_start
-      end
+      @campaigns = Campaign.current_avaliable(@cuepoint)
       response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
       response.headers['Access-Control-Allow-Methods'] = 'GET'
       headers['Access-Control-Request-Method'] = '*'

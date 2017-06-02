@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-DAC+-E6-96-B0-E5-8D-92-E7-A0-94-E4-BF-AE+VAST+Server+-E3-82-92-E4-BD-9C-E3-82-8D-E3-81-86">DAC 新卒研修 VAST Server を作ろう</h1>
+
+<p>研修最後のお題です。VASTサーバを作ってください。</p>
+
+<h2 id="label-AD+Server-E3-81-A8-E3-81-AF">AD Serverとは</h2>
+
+<h4 id="label-E4-BD-95-E3-81-8C-E3-81-A7-E3-81-8D-E3-82-8B-E3-81-8B">何ができるか</h4>
+
+<p>・自社サイトの特定の枠に広告を出せる （例）トップページのレクタングル枠、記事ページのレクタングル枠<br> ・期間を設定できる
+（例）2017/6/1 00:00:00 〜 2017/6/30 23:59:59<br> ・ゴールが設定できる
+（例）100万imp、100クリック<br> ・複数の広告を並行して配信しても全部ゴールに到達できるように調整してくれる
+（例）今この広告は順調なペースだからペースが遅れているこっちを優先して配信しよう<br> 
+※もちろん、サイトへのアクセスが100しかないのにゴールを1000にしたら到達は無理です。<br> ・ターゲティングができる
+（例）IOSのみ、Androidのみ、Macのみ</p>
+
+<h4 id="label-E3-81-A9-E3-81-86-E3-81-84-E3-81-86-E4-BB-95-E7-B5-84-E3-81-BF-E3-81-8B">どういう仕組みか</h4>
+
+<p>アドサーバを使って広告配信するためには、以下のような準備が必要である。<br> サイト：アドタグの設置<br> アドサーバー：広告設定<br>
+&lt;img src=“<a
+href="http://webdemo.dac.co.jp/omi/vast/vast_1.png"></img">webdemo.dac.co.jp/omi/vast/vast_1.png”></img</a>&gt;</p>
+
+<p>上のような準備ができていれば、実際にユーザーがサイトにアクセスしてきた際に、以下のようなフローで処理され、広告が配信できる。<br> &lt;img
+src=“<a
+href="http://webdemo.dac.co.jp/omi/vast/vast_2.png"></img">webdemo.dac.co.jp/omi/vast/vast_2.png”></img</a>&gt;</p>
+
+<p>アドサーバーで配信できる広告の種類には以下のようなものがある。<br> ・画像<br> ・テキスト<br> ・Flash<br> ・第三者配信<br>
+・HTML5アニメーション<br> ・VAST広告(youtubeの最初に流れてるような動画広告)</p>
+
+<h2 id="label-VAST-E3-81-A8-E3-81-AF">VASTとは</h2>
+
+<p>動画広告を配信する上で世界で決められているルール（プロトコル）。<br>
+動画広告の配信には動画プレイヤー、アドサーバの2つを使うが、この両者がVASTに対応する（ルールに則り実装する）ことで、<br>
+プレイヤーとしてはどのアドサーバとも連携でき、<br> アドサーバとしてはどのプレイヤーとも連携する事ができる。<br>
+※詳しい説明はこちら：「VASTって何？」<br> <a
+href="http://yebisupress.dac.co.jp/2015/03/13/%E3%80%90%E5%8B%95%E7%94%BB%E5%BA%83%E5%91%8A%E3%80%91vast%E3%81%A3%E3%81%A6%E4%BD%95%EF%BC%9F/<br>“>yebisupress.dac.co.jp/2015/03/13/%E3%80%90%E5%8B%95%E7%94%BB%E5%BA%83%E5%91%8A%E3%80%91vast%E3%81%A3%E3%81%A6%E4%BD%95%EF%BC%9F/<br></a>
+※もっと詳しく知りたい：「実際のIABのVAST仕様」<br> <a
+href="https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0">www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0</a>/</p>
+
+<h4 id="label-E3-81-A9-E3-81-86-E3-81-84-E3-81-86-E4-BB-95-E7-B5-84-E3-81-BF-E3-81-8B">どういう仕組みか</h4>
+
+<p>VAST広告の配信では、以下のような準備が必要である。<br> サイト：動画プレイヤーのタグ<br>  VAST
+URL(動画プレイヤーの処理中にこのURLを使う）<br> アドサーバー：広告設定(動画URLを設定)<br> &lt;img src=“<a
+href="http://webdemo.dac.co.jp/omi/vast/vast_3.png"></img">webdemo.dac.co.jp/omi/vast/vast_3.png”></img</a>&gt;</p>
+
+<p>上のような準備ができていれば、実際にユーザーがサイトにアクセスしてきた際に、以下のようなフローで処理され、VAST広告が配信できる。<br>
+&lt;img src=“<a
+href="http://webdemo.dac.co.jp/omi/vast/vast_4.png"></img">webdemo.dac.co.jp/omi/vast/vast_4.png”></img</a>&gt;</p>
+
+<p>動画広告は通常の画像やテキスト広告とは指標が異なる。<br> 動画以外：imp,click,CTR<br>
+動画：imp,click,CTR、start,1/4,2/4,3/4,complete,mute,unmute,pose,rewind,fullscreen,etc…</p>
+
+<h2 id="label-DATABSE_URL">DATABSE_URL</h2>
+
+<p><code>config/database.yml</code>はコミットの対象外です。
+自分で<code>config/database.yml</code>を作る、もしくは
+環境変数<code>DATABASE_URL</code>を設定しましょう。
+herokuにdeployする時は、事前に次のように設定を行っておいてください。</p>
+
+<pre class="code ruby"><code class="ruby">heroku config --app {アプリケーション} | grep DATABASE_URL
+# CLEARDB_DATABASE_URL:     mysql://b060ea41769e...
+# このURLの mysql を mysql2 に変えて次のように設定する
+heroku config:set DATABASE_URL=&#39;mysql2://b060ea41769e...&#39; --app {アプリケーション}</code></pre>
+</div></div>
+
+      <div id="footer">
+  Generated on Fri Jun  2 18:48:13 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.3.0).
+</div>
+
+    </div>
+  </body>
+</html>
