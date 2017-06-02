@@ -17,5 +17,7 @@ class ResultsController < ApplicationController
       @result.count_complete += 1
     end
     @result.save!
+    send_data(Base64.decode64('R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='),
+      type: 'image/gif', disposition: 'inline')
   end
 end

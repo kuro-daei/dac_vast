@@ -459,7 +459,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var player = document.createElement('video');
   player.width = 775;
   player.height = 436;
-  player.controls = true;
   document.body.appendChild(player);
   var vast = new Vast(document.body);
   vast.load(vastUrl).then(function () {

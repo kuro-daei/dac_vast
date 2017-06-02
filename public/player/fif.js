@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function(){
   var show = document.getElementById('show');
   show.addEventListener('click', function(){
     var url = document.getElementById('vast').value;
-    console.log('vast url is : ' + url);
     var adspace = document.getElementById('adspace');
     adspace.innerHTML = "";
     var iframe = document.createElement('iframe');

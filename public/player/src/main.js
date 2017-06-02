@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const player = document.createElement('video');
   player.width = 775;
   player.height = 436;
-  player.controls = true;
   document.body.appendChild(player);
   const vast = new Vast(document.body);
   vast.load(vastUrl).then(() => {
