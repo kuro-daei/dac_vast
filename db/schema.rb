@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601085605) do
-
-  create_table "Campaigns_Cuepoints", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "cuepoint_id", null: false
-    t.integer  "campaign_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.datetime "deleted_at"
-    t.index ["campaign_id"], name: "index_campaigns_cuepoints_on_campaign_id", using: :btree
-    t.index ["cuepoint_id"], name: "index_campaigns_cuepoints_on_quepoint_id", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20170602040959) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",        null: false
@@ -31,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170601085605) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.datetime "deleted_at"
+  end
+
+  create_table "campaigns_cuepoints", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cuepoint_id", null: false
+    t.integer  "campaign_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
+    t.index ["campaign_id"], name: "index_campaigns_cuepoints_on_campaign_id", using: :btree
+    t.index ["cuepoint_id"], name: "index_campaigns_cuepoints_on_quepoint_id", using: :btree
   end
 
   create_table "cuepoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 20170601085605) do
     t.index ["cuepoint_id"], name: "index_results_on_cuepoint_id", using: :btree
   end
 
-  add_foreign_key "Campaigns_Cuepoints", "campaigns"
-  add_foreign_key "Campaigns_Cuepoints", "cuepoints"
+  add_foreign_key "campaigns_cuepoints", "campaigns"
+  add_foreign_key "campaigns_cuepoints", "cuepoints"
 end
