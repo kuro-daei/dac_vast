@@ -43,4 +43,61 @@ describe Campaign do
     expect(campaign.save).to eq(false)
   end
 
+  it 'limit_startが整数でない' do
+    campaign = build(:campaign)
+    campaign.limit_start = nil
+    expect(campaign.save).to eq(false)
+    campaign.limit_start = 'a'
+    expect(campaign.save).to eq(false)
+    campaign.limit_start = 100.5
+    expect(campaign.save).to eq(false)
+  end
+
+  it 'limit_startの境界値チェック' do
+    campaign = build(:campaign)
+    campaign.limit_start = 0
+    expect(campaign.save).to eq(false)
+    campaign.limit_start = 1
+    expect(campaign.save).to eq(true)
+    campaign.limit_start = 9999
+    expect(campaign.save).to eq(true)
+    campaign.limit_start = 10000
+    expect(campaign.save).to eq(false)
+  end
+
+  it 'start_atが正しい日付でない' do
+    campaign = build(:campaign)
+    campaign.start_at = 1
+    expect(campaign.save).to eq(false)
+    campaign.start_at = 'abc'
+    expect(campaign.save).to eq(false)
+    campaign.start_at = '2017/5/0'
+    expect(campaign.save).to eq(false)
+    campaign.start_at = '2017/5/1 12:12:99'
+    expect(campaign.save).to eq(false)
+  end
+
+  it 'end_atが正しい日付でない' do
+    campaign = build(:campaign)
+    campaign.end_at = 1
+    expect(campaign.save).to eq(false)
+    campaign.end_at = 'abc'
+    expect(campaign.save).to eq(false)
+    campaign.end_at = '2017/5/0'
+    expect(campaign.save).to eq(false)
+    campaign.end_at = '2017/5/1 12:12:99'
+    expect(campaign.save).to eq(false)
+  end
+
+  it 'start_atがend_atよりも大きい(開始が終了よりも後)' do
+    campaign = build(:campaign)
+    campaign.start_at = '2017/05/01 00:00:01'
+    campaign.end_at = '2017/05/01 00:00:00'
+    expect(campaign.save).to eq(false)
+    # 同一時刻は正常
+    campaign.start_at = '2017/05/01 00:00:00'
+    campaign.end_at = '2017/05/01 00:00:00'
+    expect(campaign.save).to eq(true)
+  end
+
 end
