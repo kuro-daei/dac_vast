@@ -1,19 +1,2 @@
 <h1>キューポイント編集</h1>
-<%= form_for @cuepoint, :url => { :action => "update" }, html: {class: 'form-horizontal'} do |f| %>
-  <%= render "shared/error_messages", :object => @cuepoint %>
-
-  <%= render partial: 'cuepoints/form', locals: { f: f } %>
-
-  <div class="form-group">
-    <label class="col-sm-2">
-      VAST URL
-    </label>
-    <div class="col-sm-8">
-      <%= link_to vast_url(@cuepoint), vast_url(@cuepoint), target: '_blank' %>
-    </div>
-  </div>
-
-  <%= f.submit '登録', class: 'btn btn-success btn-centered' %>
-  <%= link_to "中止", cuepoints_path, class: 'btn btn-default' %>
-  <%= link_to "削除", cuepoint_path(@cuepoint), method: :delete, data: { confirm: "削除しますか？一旦削除すると元には戻せません。" }, class: 'btn btn-link' %>
-<% end %>
+<% #TODO %>
