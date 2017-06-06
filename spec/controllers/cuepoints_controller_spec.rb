@@ -64,7 +64,7 @@ describe CuepointsController do
           post :create, cuepoint: @cuepoint
         }.to change(Cuepoint, :count).by(1)
       end
-      it 'rootにリダイレクトすること' do
+      it 'cuepoints_pathにリダイレクトすること' do
         post :create, cuepoint: @cuepoint
         expect(response).to redirect_to cuepoints_path
       end
@@ -106,7 +106,7 @@ describe CuepointsController do
           @cuepoint.reload
           expect(@cuepoint.name).to eq 'hogehoge'
         end
-        it 'cuepoints#showにリダイレクトすること' do
+        it 'cuepoints_pathにリダイレクトすること' do
           expect(response).to redirect_to cuepoints_path
         end
       end
@@ -150,7 +150,7 @@ describe CuepointsController do
           delete :destroy, id: @cuepoint.id
         }.to change(Cuepoint,:count).by(-1)
       end
-      it 'cuepoints#indexにリダイレクトされること'do
+      it 'cuepoints_pathにリダイレクトされること'do
         delete :destroy, id: @cuepoint.id
         expect(response).to redirect_to cuepoints_path
       end
