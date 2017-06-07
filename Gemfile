@@ -56,6 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
-gem 'paranoia', '~> 2.2'
 gem 'validates_timeliness', '~> 4.0'
 gem 'rails-i18n'

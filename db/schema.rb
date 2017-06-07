@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531051840) do
+ActiveRecord::Schema.define(version: 20170607020029) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 20170531051840) do
     t.datetime "end_at"
     t.integer  "limit_start"
     t.string   "movie_url"
-    t.datetime "deleted_at"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["deleted_at"], name: "index_campaigns_on_deleted_at", using: :btree
   end
 
   create_table "campaigns_cuepoints", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -33,10 +31,8 @@ ActiveRecord::Schema.define(version: 20170531051840) do
 
   create_table "cuepoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["deleted_at"], name: "index_cuepoints_on_deleted_at", using: :btree
   end
 
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,7 +40,6 @@ ActiveRecord::Schema.define(version: 20170531051840) do
     t.integer  "cuepoint_id"
     t.integer  "count_start"
     t.integer  "count_complete"
-    t.string   "deleted_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["campaign_id"], name: "index_results_on_campaign_id", using: :btree
