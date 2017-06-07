@@ -102,16 +102,4 @@ describe Campaign do
     expect(campaign.save).to eq(true)
   end
 
-  it 'start_at、end_atが過去日、未来日' do
-    campaign = build(:campaign)
-    campaign.start_at = '2000/05/01 00:00:00'
-    expect(campaign.save).to eq(true)
-    campaign.end_at = '2001/05/01 00:00:00'
-    expect(campaign.save).to eq(true)
-    campaign.end_at = '2020/05/01 00:00:00'
-    expect(campaign.save).to eq(true)
-    campaign.start_at = '2019/05/01 00:00:00'
-    expect(campaign.save).to eq(true)
-  end
-
 end
