@@ -7,7 +7,7 @@
 ### 仕様書
 `ユースケース図` `ER図` `ロバストネス図` `モックアップ`があります。それぞれの図の意味が分からない場合はトレナーやメンターに聞いてください。（もしくは検索してください。）
 
-[仕様書](https://dac.box.com/s/hkexhdotl7m0mqltukab65buc57xlyli)
+[仕様書](https://dac.box.com/s/1bsi3mk748b5vjdp7tog78q59plxxiya)
 
 ### サンプルキャンペーン用動画URL
 * [http://img.ak.impact-ad.jp/pp/vfiles/dac_demo_eye.mp4]()
