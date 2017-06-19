@@ -16,6 +16,15 @@
 ### VAST用XMLのテンプレート
 * [XML](https://github.com/kuro-daei/dac_vast/blob/master/app/views/campaigns/index.xml.erb)
 
+VAST XMLをレスポンスで戻す場合は[CORS\(Cross-Origin Resource Sharin\)](https://developer.mozilla.org/ja/docs/Web/HTTP/HTTP_access_control)に対応させる必要があるため、下記のコードをControllerに追加する必要があります。(一旦呪文として覚えておいてください。)
+```ruby
+response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
+response.headers['Access-Control-Allow-Methods'] = 'GET'
+headers['Access-Control-Request-Method'] = '*'
+headers['Access-Control-Allow-Credentials'] = 'true'
+headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type'
+```
+
 ### 確認用Webページ
 システムが完成したら下記の確認ページをダウンロードしてVAST URLを入力してください。
 
