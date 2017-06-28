@@ -25,6 +25,13 @@ headers['Access-Control-Allow-Credentials'] = 'true'
 headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type'
 ```
 
+また、トラッキングリクエストした際に期待されるレスポンスはtypeを`image/gif`にする必要があります。
+トラッキング時の処理では以下の1x1データをレスポンスするコードを追加する必要があります。（こちらも呪文として覚えておいてください。）
+```ruby
+send_data(Base64.decode64('R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='),
+type: 'image/gif', disposition: 'inline')
+```
+
 ### 確認用Webページ
 システムが完成したら下記の確認ページをダウンロードしてVAST URLを入力してください。
 
